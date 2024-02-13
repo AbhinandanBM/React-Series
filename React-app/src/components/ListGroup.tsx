@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 
-function ListGroup() {
-  let items = ["Bengaluru", "Mandya", "Mysore", "Bidadi", "Ramanagara"];
+interface Props {
+  items: string[];
+  heading: string;
+}
 
+function ListGroup({ items, heading }: Props) {
   // handling event
   // const handleClick = (event: MouseEvent) => {
   //   console.log(event);
@@ -14,7 +17,7 @@ function ListGroup() {
 
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       <ul className="list-group">
         {/* Conditional Rendering */}
         {items.length == 0 && <p>No items found</p>}
